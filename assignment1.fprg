@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="conmars"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2019-09-16 09:36:23 PM"/>
+        <attribute name="created" value="Y29ubWFyczsxOTIwOUNORDgyNTk1MEg7MjAxOS0wOS0xNjswODo1ODoxNyBQTTsyOTE5"/>
+        <attribute name="edited" value="Y29ubWFyczsxOTIwOUNORDgyNTk1MEg7MjAxOS0wOS0xNjswOTozNjoyMyBQTTs0OzMwMjQ="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="idNum, dogWeight, dogAge, weekNum, total, discount, discountTotal, EXIT" type="Integer" array="False" size=""/>
+            <declare name="dogName, dogBreed" type="String" array="False" size=""/>
+            <assign variable="EXIT" expression="-1"/>
+            <output expression="&quot;Welcome to MPLS Dog Boarding Company, this program will determine the cost of a boarding fee&quot;" newline="True"/>
+            <output expression="&quot;Please enter your id number&quot;" newline="True"/>
+            <input variable="idNum"/>
+            <output expression="&quot;Please enter your dog's name&quot;" newline="True"/>
+            <input variable="dogName"/>
+            <output expression="&quot;Please enter your dog's breed&quot;" newline="True"/>
+            <input variable="dogBreed"/>
+            <output expression="&quot;Please enter your dog's age&quot;" newline="True"/>
+            <input variable="dogAge"/>
+            <output expression="&quot;Please enter your dog's weight&quot;" newline="True"/>
+            <input variable="dogWeight"/>
+            <output expression="&quot;Please enter the number of weeks &quot; &amp; dogName &amp; &quot; will be boarded&quot;" newline="True"/>
+            <input variable="weekNum"/>
+            <if expression="dogWeight &lt;= 15">
+                <then>
+                    <assign variable="total" expression="55 * weekNum"/>
+                </then>
+                <else>
+                    <if expression="dogWeight &lt;= 30">
+                        <then>
+                            <assign variable="total" expression="75 * weekNum"/>
+                        </then>
+                        <else>
+                            <if expression="dogWeight &lt;= 80">
+                                <then>
+                                    <assign variable="total" expression="105 * weekNum"/>
+                                </then>
+                                <else>
+                                    <if expression="dogWeight &gt; 80">
+                                        <then>
+                                            <assign variable="total" expression="125 * weekNum"/>
+                                        </then>
+                                        <else/>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <if expression="total &gt; 125">
+                <then>
+                    <assign variable="discount" expression="total * 0.2"/>
+                    <assign variable="discountTotal" expression="total - discount"/>
+                    <output expression="&quot;Final Bill: &quot; &amp;&#13;&#10;&quot; Id Number: &quot; &amp; idNum &amp;&#13;&#10;&quot; Name of Dog: &quot; &amp; dogName &amp;&#13;&#10;&quot; Age of Dog: &quot; &amp; dogAge &amp;&#13;&#10;&quot; Breed of Dog: &quot; &amp; dogBreed &amp;&#13;&#10;&quot; Weight of Dog: &quot; &amp; dogWeight &amp;&#13;&#10;&quot; Number of Weeks Boarded: &quot; &amp; weekNum &amp;&#13;&#10;&quot; Total cost of Boarding: &quot; &amp; &quot;$&quot; &amp; discountTotal &amp;&#13;&#10;&quot; You got a 2% discount! &quot; &amp;&#13;&#10;&quot; Thank you for boarding with MPLS Dog Boarding Company!&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Final Bill: &quot; &amp;&#13;&#10;&quot; Id Number: &quot; &amp; idNum &amp;&#13;&#10;&quot; Name of Dog: &quot; &amp; dogName &amp;&#13;&#10;&quot; Age of Dog: &quot; &amp; dogAge &amp;&#13;&#10;&quot; Breed of Dog: &quot; &amp; dogBreed &amp;&#13;&#10;&quot; Weight of Dog: &quot; &amp; dogWeight &amp;&#13;&#10;&quot; Number of Weeks Boarded: &quot; &amp; weekNum &amp;&#13;&#10;&quot; Total cost of Boarding: &quot; &amp; &quot;$&quot; &amp; total &amp;&#13;&#10;&quot; Thank you for boarding with MPLS Dog Boarding Company!&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
