@@ -1,0 +1,57 @@
+//Tony Condon
+START
+
+	DECLARATIONS
+		num idNum, dogWeight, dogAge, weekNum, total, discount, discountTotal
+		string dogName, dogBreed
+		
+		OUTPUT "Welcome to MPLS Dog Boarding Company, this program will determine the cost of a boarding fee"
+		OUTPUT "Please enter your id number"
+		INPUT idNum
+		OUTPUT "Please enter your dog's name"
+		INPUT dogName
+		OUTPUT "Please enter your dog's breed"
+		INPUT dogBreed
+		OUTPUT "Please enter your dog's age"
+		INPUT dogAge
+		OUTPUT "Please enter your dog's weight"
+		INPUT dogWeight
+		OUTPUT "Please enter the number of weeks " dogName " will be boarded"
+		INPUT weekNum
+		
+		IF (dogWeight <= 15) THEN
+		total = 55 * weekNum
+		ENDIF
+		IF (dogWeight <= 30) THEN
+		total = 75 * weekNum
+		ENDIF
+		IF (dogWeight <= 80) THEN
+		total = 105 * weekNum
+		ENDIF
+		IF (dogWeight > 80) THEN
+		total = 125 * weekNum
+		ENDIF
+		
+		IF (total > 125) THEN
+		OUTPUT ""Final Bill: " &
+		" Id Number: " & idNum &
+		" Name of Dog: " & dogName &
+		" Age of Dog: " & dogAge &
+		" Breed of Dog: " & dogBreed &
+		" Weight of Dog: " & dogWeight &
+		" Number of Weeks Boarded: " & weekNum &
+		" Total cost of Boarding: " & "$" & discountTotal &
+		" You got a 2% discount! " &
+		" Thank you for boarding with MPLS Dog Boarding Company!""
+		ELSE
+		OUTPUT "Final Bill: " &
+		" Id Number: " & idNum &
+		" Name of Dog: " & dogName &
+		" Age of Dog: " & dogAge &
+		" Breed of Dog: " & dogBreed &
+		" Weight of Dog: " & dogWeight &
+		" Number of Weeks Boarded: " & weekNum &
+		" Total cost of Boarding: " & "$" & total &
+		"Thank you for boarding with MPLS Dog Boarding Company!"
+		ENDIF
+STOP
